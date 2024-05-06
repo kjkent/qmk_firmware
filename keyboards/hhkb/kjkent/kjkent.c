@@ -79,7 +79,7 @@ void suspend_wakeup_init_kb(void) {
     suspend_wakeup_init_user();
 
     // Power up BLE module
-    BLUETOOTH_ENABLE && writePinLow(D5);
+    writePinLow(D5);
     // Enable UART TX
     UCSR1B |= _BV(TXEN1);
 

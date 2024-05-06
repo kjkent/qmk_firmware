@@ -16,6 +16,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "matrix.h"
+#include "debug.h"
+#include "timer.h"
+#include "wait.h"
+#include "suspend.h"
 #include "quantum.h"
 
 #ifdef BLUETOOTH_ENABLE
@@ -157,6 +162,8 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
 bool adafruit_ble_delbonds(void);
 bool adafruit_ble_reconnect(void);
 
+// Unsure of this code; whether adafruit funcs still exist and why command + R/S which seem
+//  to perform unrelated functions
 bool command_extra(uint8_t code) {
     switch (code) {
 #ifdef BLUETOOTH_ENABLE
